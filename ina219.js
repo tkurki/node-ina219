@@ -288,9 +288,9 @@ Ina219.prototype.calibrate32V1A  = function (callback) {
 		$this.log("INA219_REG_CALIBRATION done: " + err);
 				
 		var config =    INA219_CONFIG_BVOLTAGERANGE_32V |
-						INA219_CONFIG_GAIN_8_320MV |
+						INA219_CONFIG_GAIN_1_40MV |
 						INA219_CONFIG_BADCRES_12BIT |
-						INA219_CONFIG_SADCRES_12BIT_1S_532US |
+						INA219_CONFIG_SADCRES_12BIT_64S_34MS |
 						INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS;
 
 		$this.writeRegister(INA219_REG_CONFIG, config, function(err)  {
@@ -389,9 +389,9 @@ Ina219.prototype.calibrate32V2A  = function (callback) {
 		$this.log("INA219_REG_CALIBRATION done: " + err);
 
 		var config =    INA219_CONFIG_BVOLTAGERANGE_32V |
-						INA219_CONFIG_GAIN_8_320MV |
+						INA219_CONFIG_GAIN_1_40MV |
 						INA219_CONFIG_BADCRES_12BIT |
-						INA219_CONFIG_SADCRES_12BIT_1S_532US |
+						INA219_CONFIG_SADCRES_12BIT_64S_34MS |
 						INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS;
 
 		$this.writeRegister(INA219_REG_CONFIG, config, function(err)  {
