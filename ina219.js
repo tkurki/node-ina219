@@ -438,16 +438,14 @@ Ina219.prototype.getBusVoltage_raw  = function (callback) {
   * Reads the raw shunt voltage 
   * @param {onHaveValueCallback} callback - Callback to be invoked when complete. 
   */
-Ina219.prototype.getShuntVoltage_raw  = function (callback) {
-
-	this.log("getShuntVoltage_raw");
-	var $this = this;
-	this.readRegister(INA219_REG_SHUNTVOLTAGE, function (value) {
-
-		$this.log("getShuntVoltage_raw RET: " + value);
-		callback(value);
+Ina219.prototype.getShuntVoltage_raw = function() {
+  var that = this
+  return new Promise(function(resolve, reject) {
+    that.readRegister(INA219_REG_SHUNTVOLTAGE, function(value) {
+      resolve(value);
     });
-}
+  });
+};
 
 /**
   * Reads the raw current value 
